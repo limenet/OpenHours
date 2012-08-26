@@ -6,7 +6,7 @@ Description: Open Hours, Based on Biz Hours by http://francisaltomare.com/
 Version: 1.0
 Author: Linus Metzler
 Plugin URI: https://github.com/limenet/OpenHours
-License: GPL2
+License: GPLv2 or later
 */
 /*  Copyright 2012  Linus Metzler  (email : limenet.ch@gmail.com)
 
