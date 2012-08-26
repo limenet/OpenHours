@@ -73,7 +73,6 @@ if(!empty($data[$today])){
 $label = !isset($label) ? $label = '<span class="label label-important">'.__('closed', 'open-hours').'</span>' : $label;
 
 $output .= '<div>';
-$output .= '<h3>'.__('Open Hours', 'open-hours').'</h3>';
 $output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'</p>';
 foreach ($data as $index => $day) {
 	if(strlen($day) > 0){
@@ -102,10 +101,11 @@ $vac_start = get_option('open_hours_vac_start');
 $vac_end = get_option('open_hours_vac_end');
 if(!empty($vac_start) AND !empty($vac_end)){	
 	$output .= '<hr>';
-	$output .= '<h4>'.__('Holidays', 'open-hours').'</h4>';
+	$output .= '<h6>'.__('Holidays', 'open-hours').'</h6>';
 	$output .= "<p>".sprintf(__('We\'re on holidays from %1$s until %2$s.', 'open-hours'), $vac_start, $vac_end)."</p>";
 }
 $output .= '</div>';
+$output .= '<hr>';
 return $output;
 
 }
