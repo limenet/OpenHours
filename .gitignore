@@ -167,4 +167,5 @@ pip-log.txt
 *.sublime-workspace
 sftp-config.json
 *config.json
-sftp*sftp-config.json
+sftp*
+sftp-config.json
