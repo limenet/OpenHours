@@ -5,10 +5,24 @@ Plugin URI: http://linusmetzler.me
 Description: Open Hours, Based on Biz Hours by http://francisaltomare.com/
 Version: 1.0
 Author: Linus Metzler
-Plugin URI: http://linusmetzler.me
-License: GNU GPL v3
+Plugin URI: https://github.com/limenet/OpenHours
+License: GPL2
 */
+/*  Copyright 2012  Linus Metzler  (email : limenet.ch@gmail.com)
 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 
 register_activation_hook(__FILE__,'installPlugin');
 register_deactivation_hook( __FILE__, 'removePlugin' );
