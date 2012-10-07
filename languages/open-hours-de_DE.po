@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Hours v1.0\n"
+"Project-Id-Version: Open Hours v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-08-26 17:28:49+0000\n"
+"PO-Revision-Date: 2012-10-07 09:59:37+0000\n"
 "Last-Translator: limenet <admin@limenet.ch>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,4 +18,154 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
+
+#: openhours.php:36
+#: openhours.php:239
+#@ open-hours
+msgid "Monday"
+msgstr "Montag"
+
+#: openhours.php:36
+#: openhours.php:243
+#@ open-hours
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: openhours.php:36
+#: openhours.php:247
+#@ open-hours
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: openhours.php:36
+#: openhours.php:251
+#@ open-hours
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: openhours.php:36
+#: openhours.php:256
+#@ open-hours
+msgid "Friday"
+msgstr "Freitag"
+
+#: openhours.php:36
+#: openhours.php:261
+#@ open-hours
+msgid "Saturday"
+msgstr "Samstag"
+
+#: openhours.php:36
+#: openhours.php:266
+#@ open-hours
+msgid "Sunday"
+msgstr "Sonntag"
+
+#: openhours.php:65
+#: openhours.php:77
+#: openhours.php:201
+#@ open-hours
+msgid "open"
+msgstr "offen"
+
+#: openhours.php:79
+#: openhours.php:209
+#@ open-hours
+msgid "closed"
+msgstr "geschlossen"
+
+#: openhours.php:95
+#, php-format
+#@ open-hours
+msgid "At the moment we are %s"
+msgstr "Zur Zeit haben wir %s"
+
+#: openhours.php:91
+#: openhours.php:271
+#@ open-hours
+msgid "Holidays"
+msgstr "Ferien"
+
+#: openhours.php:181
+#@ open-hours
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: openhours.php:182
+#@ open-hours
+msgid "Any field left blank will not show up"
+msgstr "Leere Felder werden nicht angezeigt"
+
+#: openhours.php:218
+#@ open-hours
+msgid "Preferences"
+msgstr "Präferenzen"
+
+#: openhours.php:219
+#@ open-hours
+msgid "Delimiter between multiple open hours"
+msgstr "Trennzeichen zwischen mehreren Öffnungszeiten"
+
+#: openhours.php:223
+#@ open-hours
+msgid "Delimiter in-between open hours"
+msgstr "Trennzeichen zwischen Öffnungszeiten"
+
+#: openhours.php:233
+#@ open-hours
+msgid "Hours"
+msgstr "Stunden"
+
+#: openhours.php:229
+#: openhours.php:238
+#@ open-hours
+msgid "Days"
+msgstr "Tage"
+
+#: openhours.php:272
+#@ open-hours
+msgid "Start"
+msgstr "Start"
+
+#: openhours.php:276
+#@ open-hours
+msgid "End"
+msgstr "Ende"
+
+#: openhours.php:290
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: openhours.php:228
+#@ open-hours
+msgid "Range"
+msgstr "Bereich"
+
+#: openhours.php:92
+#, php-format
+#@ open-hours
+msgid "We're on holidays from %1$s until %2$s because %3$s."
+msgstr "Wir haben Ferien von %1$s bis %2$s weil %3$s."
+
+#: openhours.php:93
+#, php-format
+#@ open-hours
+msgid "After %1$s we're happy to welcome you during the following hours:"
+msgstr "Nach dem %1$s freuen wir uns, Sie wieder zu folgenden Zeiten zu begrüssen:"
+
+#: openhours.php:96
+#@ open-hours
+msgid ", though normally we're only open during these hours:"
+msgstr ", jedoch haben wir normalerweise nur zu folgenden Zeiten offen:"
+
+#: openhours.php:193
+#@ open-hours
+msgid "Override"
+msgstr "Überschreiben"
+
+#: openhours.php:280
+#@ open-hours
+msgid "Reason"
+msgstr "Grund"
 
