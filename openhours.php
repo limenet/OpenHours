@@ -93,7 +93,7 @@ if(!empty($vac_start) AND !empty($vac_end)){
 	$output .= "<p>".sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'open-hours'), $vac_end)."</p>";
 }else{
 	$output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'';
-	$output .= $override ? __(', though normally we\'re only open during these hours:') : '.';	
+	$output .= $override ? __(', though normally we\'re only open during these hours:', 'open-hours') : '.';	
 	$ouput  .= '</p>';
 }
 
