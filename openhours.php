@@ -34,6 +34,7 @@ date_default_timezone_set(get_option('timezone_string'));
 $output = '';
 
 $days = array(1 => __('Monday', 'open-hours'), 2 => __('Tuesday', 'open-hours'), 3 => __('Wednesday', 'open-hours'), 4 => __('Thursday', 'open-hours'), 5 => __('Friday', 'open-hours'), 6=> __('Saturday', 'open-hours'), 7 => __('Sunday', 'open-hours'));
+$override_status = get_option('open_hours_override_status');
 foreach ($days as $index => $day) {
 	$data[$index] = get_option('open_hours_'.$index);
 }
@@ -70,7 +71,14 @@ if(!empty($data[$today])){
 		unset($openNow);
 	}
 }
-$label = !isset($label) ? $label = '<span class="label label-important">'.__('closed', 'open-hours').'</span>' : $label;
+if(!isset($label)){
+	if($override_status == '1'){
+		$override = true;
+			$label = '<span class="label label-success">'.__('open', 'open-hours').'</span>';
+	}else{
+		$label = '<span class="label label-important">'.__('closed', 'open-hours').'</span>';
+	}
+}
 
 $output .= '<div>';
 
@@ -84,7 +92,9 @@ if(!empty($vac_start) AND !empty($vac_end)){
 	$output .= "<p>".sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'open-hours'), $vac_start, $vac_end, $vac_reason)."</p>";
 	$output .= "<p>".sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'open-hours'), $vac_end)."</p>";
 }else{
-	$output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'</p>';	
+	$output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'';
+	$output .= $override ? __(', though normally we\'re only open during these hours:') : '.';	
+	$ouput  .= '</p>';
 }
 
 foreach ($data as $index => $day) {
@@ -180,19 +190,27 @@ function open_hours_html_page() {
 		font-weight: bold;
 	}
 </style>
+<legend><?php _e('Override', 'open-hours')?></legend>
+<?php
+$override_status = get_option('open_hours_override_status');
+if($override_status == '0'):
+?>
 <form method="post" action="options.php">
-<?php wp_nonce_field('update-options'); ?>
-	<fieldset>
-		<legend><?php _e('Override', 'open-hours')?></legend>
-		<input name="open_hours_override_timestamp" type="hidden" id="open_hours_override_timestamp"
-		value="<?php echo time(); ?>" />
-		<?php _e('open', 'open-hours')?>: 
-		<input name="open_hours_override_status" type="checkbox" id="open_hours_override_status"
-		value="<?php echo get_option('open_hours_override_status'); ?>" />
-		<br>
-		<input type="submit" value="<?php  _e('Save Changes') ?>" />
-	</fieldset>
+	<?php wp_nonce_field('update-options'); ?>
+	<input name="open_hours_override_status" type="hidden" id="open_hours_override_status" value="1">
+	<input type="submit" value="<?php _e('open', 'open-hours')?>" />
+	<input type="hidden" name="action" value="update" />
+	<input type="hidden" name="page_options" value="open_hours_override_status" />
 </form>
+<?php else: ?>
+<form method="post" action="options.php">
+	<?php wp_nonce_field('update-options'); ?>
+	<input name="open_hours_override_status" type="hidden" id="open_hours_override_status" value="0">
+	<input type="submit" value="<?php _e('closed', 'open-hours')?>" />
+	<input type="hidden" name="action" value="update" />
+	<input type="hidden" name="page_options" value="open_hours_override_status" />
+</form>
+<?php endif; ?>
 <hr>
 <form method="post" action="options.php">
 <?php wp_nonce_field('update-options'); ?>
