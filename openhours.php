@@ -73,7 +73,20 @@ if(!empty($data[$today])){
 $label = !isset($label) ? $label = '<span class="label label-important">'.__('closed', 'open-hours').'</span>' : $label;
 
 $output .= '<div>';
-$output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'</p>';
+
+
+$vac_start  = get_option('open_hours_vac_start');
+$vac_end    = get_option('open_hours_vac_end');
+$vac_reason = get_option('open_hours_vac_reason');
+if(!empty($vac_start) AND !empty($vac_end)){	
+	$output .= '<hr>';
+	$output .= '<h6><span class="label label-warning">'.__('Holidays', 'open-hours').'</span></h6>';
+	$output .= "<p>".sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'open-hours'), $vac_start, $vac_end, $vac_reason)."</p>";
+	$output .= "<p>".sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'open-hours'), $vac_end)."</p>";
+}else{
+	$output .= '<p>'.sprintf(__('At the moment we are %s', 'open-hours'), $label).'</p>';	
+}
+
 foreach ($data as $index => $day) {
 	if(strlen($day) > 0){
 		$output .= '<div class="row"><div class="span1">';
@@ -97,13 +110,6 @@ if($int > 0){
 	$output .= '</div></div>';
 }
 
-$vac_start = get_option('open_hours_vac_start');
-$vac_end = get_option('open_hours_vac_end');
-if(!empty($vac_start) AND !empty($vac_end)){	
-	$output .= '<hr>';
-	$output .= '<h6>'.__('Holidays', 'open-hours').'</h6>';
-	$output .= "<p>".sprintf(__('We\'re on holidays from %1$s until %2$s.', 'open-hours'), $vac_start, $vac_end)."</p>";
-}
 $output .= '</div>';
 $output .= '<hr>';
 return $output;
@@ -231,10 +237,14 @@ function open_hours_html_page() {
 	<b><?php _e('End', 'open-hours')?>: </b>
 	<input name="open_hours_vac_end" type="text" id="open_hours_vac_end"
 	value="<?php echo get_option('open_hours_vac_end'); ?>" />
+	<br />
+	<b><?php _e('Reason', 'open-hours')?>: </b>
+	<input name="open_hours_vac_reason" type="text" id="open_hours_vac_reason"
+	value="<?php echo get_option('open_hours_vac_reason'); ?>" />
 </fieldset>
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="open_hours_7, open_hours_1, open_hours_2, open_hours_3, open_hours_4, open_hours_5, open_hours_6, open_hours_range, open_hours_range_hours, open_hours_vac_start, open_hours_vac_end, open_hours_multiple_time_delimiter, open_hours_time_delimiter" />
+<input type="hidden" name="page_options" value="open_hours_7, open_hours_1, open_hours_2, open_hours_3, open_hours_4, open_hours_5, open_hours_6, open_hours_range, open_hours_range_hours, open_hours_vac_start, open_hours_vac_end, open_hours_multiple_time_delimiter, open_hours_time_delimiter, open_hours_vac_reason" />
 
 
 <p>
