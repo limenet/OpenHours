@@ -121,7 +121,6 @@ if($int > 0){
 }
 
 $output .= '</div>';
-$output .= '<hr>';
 return $output;
 
 }
