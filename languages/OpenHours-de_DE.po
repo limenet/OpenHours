@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Open Hours v1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-30 17:47+0200\n"
-"PO-Revision-Date: 2019-04-30 17:48+0200\n"
+"POT-Creation-Date: 2019-04-30 18:21+0200\n"
+"PO-Revision-Date: 2019-04-30 18:22+0200\n"
 "Last-Translator: limenet <admin@limenet.ch>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,140 +20,144 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:238
+#: openhours.php:38 openhours.php:217
 msgid "Monday"
 msgstr "Montag"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:242
+#: openhours.php:38 openhours.php:222
 msgid "Tuesday"
 msgstr "Dienstag"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:246
+#: openhours.php:38 openhours.php:227
 msgid "Wednesday"
 msgstr "Mittwoch"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:250
+#: openhours.php:38 openhours.php:232
 msgid "Thursday"
 msgstr "Donnerstag"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:255
+#: openhours.php:38 openhours.php:238
 msgid "Friday"
 msgstr "Freitag"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:260
+#: openhours.php:38 openhours.php:244
 msgid "Saturday"
 msgstr "Samstag"
 
 # @ open-hours
-#: openhours.php:36 openhours.php:265
+#: openhours.php:38 openhours.php:250
 msgid "Sunday"
 msgstr "Sonntag"
 
 # @ open-hours
-#: openhours.php:65 openhours.php:77 openhours.php:200
+#: openhours.php:67 openhours.php:79 openhours.php:167
 msgid "open"
 msgstr "offen"
 
 # @ open-hours
-#: openhours.php:79 openhours.php:208
+#: openhours.php:81 openhours.php:176
 msgid "closed"
 msgstr "geschlossen"
 
 # @ open-hours
-#: openhours.php:91 openhours.php:270
+#: openhours.php:93 openhours.php:256
 msgid "Holidays"
 msgstr "Ferien"
 
 # @ open-hours
-#: openhours.php:92
+#: openhours.php:94
 #, php-format
 msgid "We're on holidays from %1$s until %2$s because %3$s."
 msgstr "Wir haben Ferien von %1$s bis %2$s weil %3$s."
 
 # @ open-hours
-#: openhours.php:93
+#: openhours.php:95
 #, php-format
 msgid "After %1$s we're happy to welcome you during the following hours:"
 msgstr ""
 "Nach dem %1$s freuen wir uns, Sie wieder zu folgenden Zeiten zu begrüssen:"
 
 # @ open-hours
-#: openhours.php:95
+#: openhours.php:97
 #, php-format
 msgid "At the moment we are %s"
 msgstr "Zur Zeit haben wir %s"
 
 # @ open-hours
-#: openhours.php:96
+#: openhours.php:98
 msgid ", though normally we're only open during these hours:"
 msgstr ", jedoch haben wir normalerweise nur zu folgenden Zeiten offen:"
 
 # @ open-hours
-#: openhours.php:180
+#: openhours.php:146
 msgid "Settings"
 msgstr "Einstellungen"
 
 # @ open-hours
-#: openhours.php:181
+#: openhours.php:147
 msgid "Any field left blank will not show up"
 msgstr "Leere Felder werden nicht angezeigt"
 
 # @ open-hours
-#: openhours.php:192
+#: openhours.php:158
 msgid "Override"
 msgstr "Überschreiben"
 
 # @ open-hours
-#: openhours.php:217
+#: openhours.php:187
 msgid "Preferences"
 msgstr "Präferenzen"
 
 # @ open-hours
-#: openhours.php:218
+#: openhours.php:188
 msgid "Delimiter between multiple open hours"
 msgstr "Trennzeichen zwischen mehreren Öffnungszeiten"
 
 # @ open-hours
-#: openhours.php:222
+#: openhours.php:193
 msgid "Delimiter in-between open hours"
 msgstr "Trennzeichen zwischen Öffnungszeiten"
 
+#: openhours.php:198
+msgid "Show open/closed in shortcode"
+msgstr ""
+
 # @ open-hours
-#: openhours.php:227
+#: openhours.php:204
 msgid "Range"
 msgstr "Bereich"
 
 # @ open-hours
-#: openhours.php:228 openhours.php:237
+#: openhours.php:205 openhours.php:216
 msgid "Days"
 msgstr "Tage"
 
 # @ open-hours
-#: openhours.php:232
+#: openhours.php:210
 msgid "Hours"
 msgstr "Stunden"
 
 # @ open-hours
-#: openhours.php:271
+#: openhours.php:257
 msgid "Start"
 msgstr "Start"
 
 # @ open-hours
-#: openhours.php:275
+#: openhours.php:262
 msgid "End"
 msgstr "Ende"
 
 # @ open-hours
-#: openhours.php:279
+#: openhours.php:267
 msgid "Reason"
 msgstr "Grund"
 
 # @ default
-#: openhours.php:289
+#: openhours.php:278
 msgid "Save Changes"
 msgstr "Änderungen speichern"
