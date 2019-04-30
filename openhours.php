@@ -3,7 +3,7 @@
 Plugin Name: Open Hours
 Plugin URI: http://linusmetzler.me
 Description: Open Hours, Based on Biz Hours by http://francisaltomare.com/
-Version: 1.1
+Version: 1.2
 Author: Linus Metzler
 Plugin URI: https://github.com/limenet/OpenHours
 License: GPLv2 or later
@@ -216,81 +216,81 @@ $override_status = get_option('open_hours_override_status');
     ?>
 <fieldset>
 	<legend><?php _e('Preferences', 'open-hours')?></legend>
-	<?php _e('Delimiter between multiple open hours', 'open-hours')?>: 
+	<?php _e('Delimiter between multiple open hours', 'open-hours')?>:
 	<input name="open_hours_multiple_time_delimiter" type="text" id="open_hours_multiple_time_delimiter"
 	value="<?php echo get_option('open_hours_multiple_time_delimiter');
-    ?>" />	
-	<br>	
-	<?php _e('Delimiter in-between open hours', 'open-hours')?>: 
+    ?>" />
+	<br>
+	<?php _e('Delimiter in-between open hours', 'open-hours')?>:
 	<input name="open_hours_time_delimiter" type="text" id="open_hours_time_delimiter"
 	value="<?php echo get_option('open_hours_time_delimiter');
-    ?>" />	
+    ?>" />
 </fieldset>
 <fieldset>
 	<legend><?php _e('Range', 'open-hours')?></legend>
-	<?php _e('Days', 'open-hours')?>: 
+	<?php _e('Days', 'open-hours')?>:
 	<input name="open_hours_range" type="text" id="open_hours_range"
 	value="<?php echo get_option('open_hours_range');
     ?>" />
 	<br />
-	<?php _e('Hours', 'open-hours')?>: 
+	<?php _e('Hours', 'open-hours')?>:
 	<input name="open_hours_range_hours" type="text" id="open_hours_range_hours"
 	value="<?php echo get_option('open_hours_range_hours');
     ?>" />
 </fieldset>
 <fieldset>
 	<legend><?php _e('Days', 'open-hours')?></legend>
-	<?php _e('Monday', 'open-hours')?>: 
+	<?php _e('Monday', 'open-hours')?>:
 	<input name="open_hours_1" type="text" id="open_hours_1"
 	value="<?php echo get_option('open_hours_1');
     ?>" />
 	<br />
-	<?php _e('Tuesday', 'open-hours')?>: 
+	<?php _e('Tuesday', 'open-hours')?>:
 	<input name="open_hours_2" type="text" id="open_hours_2"
 	value="<?php echo get_option('open_hours_2');
     ?>" />
 	<br />
-	<?php _e('Wednesday', 'open-hours')?>: 
+	<?php _e('Wednesday', 'open-hours')?>:
 	<input name="open_hours_3" type="text" id="open_hours_3"
 	value="<?php echo get_option('open_hours_3');
     ?>" />
 	<br />
-	<?php _e('Thursday', 'open-hours')?>: 
+	<?php _e('Thursday', 'open-hours')?>:
 	<input name="open_hours_4" type="text" id="open_hours_4"
 	value="<?php echo get_option('open_hours_4');
     ?>" />
-	
+
 	<br />
-	<?php _e('Friday', 'open-hours')?>: 
+	<?php _e('Friday', 'open-hours')?>:
 	<input name="open_hours_5" type="text" id="open_hours_5"
 	value="<?php echo get_option('open_hours_5');
     ?>" />
-	
+
 	<br />
-	<?php _e('Saturday', 'open-hours')?>: 
+	<?php _e('Saturday', 'open-hours')?>:
 	<input name="open_hours_6" type="text" id="open_hours_6"
 	value="<?php echo get_option('open_hours_6');
     ?>" />
 	<br />
-	
-	<?php _e('Sunday', 'open-hours')?>: 
+
+	<?php _e('Sunday', 'open-hours')?>:
 	<input name="open_hours_7" type="text" id="open_hours_7"
 	value="<?php echo get_option('open_hours_7');
     ?>" />
 </fieldset>
-<fieldset>	
+<fieldset>
 	<legend><?php _e('Holidays', 'open-hours')?></legend>
-	<?php _e('Start', 'open-hours')?>: 
+	<?php _e('Start', 'open-hours')?>:
 	<input name="open_hours_vac_start" type="text" id="open_hours_vac_start"
 	value="<?php echo get_option('open_hours_vac_start');
     ?>" />
 	<br />
-	<?php _e('End', 'open-hours')?>: 
+	<?php _e('End', 'open-hours')?>:
 	<input name="open_hours_vac_end" type="text" id="open_hours_vac_end"
 	value="<?php echo get_option('open_hours_vac_end');
     ?>" />
 	<br />
-	<?php _e('Reason', 'open-hours')?>: 
+	<?php _e('Reason', 'open-hours')?>:
 	<input name="open_hours_vac_reason" type="text" id="open_hours_vac_reason"
 	value="<?php echo get_option('open_hours_vac_reason');
     ?>" />
