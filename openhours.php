@@ -27,7 +27,10 @@ License: GPLv2 or later
 register_activation_hook(__FILE__, 'installPlugin');
 register_deactivation_hook(__FILE__, 'removePlugin');
 add_shortcode('open_hours', 'echo_hours');
-load_plugin_textdomain('OpenHours', false, basename(dirname(__FILE__)).'/languages');
+add_action('plugins_loaded', 'openhours_load_textdomain');
+function openhours_load_textdomain() {
+    load_plugin_textdomain('OpenHours', false, basename(dirname(__FILE__)).'/languages');
+}
 function echo_hours()
 {
     date_default_timezone_set(get_option('timezone_string'));
