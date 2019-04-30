@@ -1,4 +1,4 @@
-OpenHours
+open-hours
 =========
 
 Features
