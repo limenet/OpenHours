@@ -3,7 +3,7 @@
 Plugin Name: Open Hours
 Plugin URI: http://linusmetzler.me
 Description: Open Hours, Based on Biz Hours by http://francisaltomare.com/
-Version: 1.3
+Version: 1.3.1
 Author: Linus Metzler
 Plugin URI: https://github.com/limenet/OpenHours
 License: GPLv2 or later
@@ -227,6 +227,7 @@ $override_status = get_option('open_hours_override_status');
 	<input name="open_hours_time_delimiter" type="text" id="open_hours_time_delimiter"
 	value="<?php echo get_option('open_hours_time_delimiter');
     ?>" />
+    <br/>
 	<?php _e('Show open/closed in shortcode', 'OpenHours')?>:
 	<input name="open_hours_show_status_in_shortcode" type="checkbox" id="open_hours_show_status_in_shortcode"
 	value="yes" <?php echo get_option('open_hours_show_status_in_shortcode') === 'yes' ? 'checked' : '';
