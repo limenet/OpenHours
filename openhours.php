@@ -201,70 +201,70 @@ $override_status = get_option('open_hours_override_status');
     ?> />
 </fieldset>
 <fieldset>
-	<legend><?php _e('Range', 'open-hours')?></legend>
-	<?php _e('Days', 'open-hours')?>:
+	<legend><?php _e('Range', 'OpenHours')?></legend>
+	<?php _e('Days', 'OpenHours')?>:
 	<input name="open_hours_range" type="text" id="open_hours_range"
 	value="<?php echo get_option('open_hours_range');
     ?>" />
 	<br />
-	<?php _e('Hours', 'open-hours')?>:
+	<?php _e('Hours', 'OpenHours')?>:
 	<input name="open_hours_range_hours" type="text" id="open_hours_range_hours"
 	value="<?php echo get_option('open_hours_range_hours');
     ?>" />
 </fieldset>
 <fieldset>
-	<legend><?php _e('Days', 'open-hours')?></legend>
-	<?php _e('Monday', 'open-hours')?>:
+	<legend><?php _e('Days', 'OpenHours')?></legend>
+	<?php _e('Monday', 'OpenHours')?>:
 	<input name="open_hours_1" type="text" id="open_hours_1"
 	value="<?php echo get_option('open_hours_1');
     ?>" />
 	<br />
-	<?php _e('Tuesday', 'open-hours')?>:
+	<?php _e('Tuesday', 'OpenHours')?>:
 	<input name="open_hours_2" type="text" id="open_hours_2"
 	value="<?php echo get_option('open_hours_2');
     ?>" />
 	<br />
-	<?php _e('Wednesday', 'open-hours')?>:
+	<?php _e('Wednesday', 'OpenHours')?>:
 	<input name="open_hours_3" type="text" id="open_hours_3"
 	value="<?php echo get_option('open_hours_3');
     ?>" />
 	<br />
-	<?php _e('Thursday', 'open-hours')?>:
+	<?php _e('Thursday', 'OpenHours')?>:
 	<input name="open_hours_4" type="text" id="open_hours_4"
 	value="<?php echo get_option('open_hours_4');
     ?>" />
 
 	<br />
-	<?php _e('Friday', 'open-hours')?>:
+	<?php _e('Friday', 'OpenHours')?>:
 	<input name="open_hours_5" type="text" id="open_hours_5"
 	value="<?php echo get_option('open_hours_5');
     ?>" />
 
 	<br />
-	<?php _e('Saturday', 'open-hours')?>:
+	<?php _e('Saturday', 'OpenHours')?>:
 	<input name="open_hours_6" type="text" id="open_hours_6"
 	value="<?php echo get_option('open_hours_6');
     ?>" />
 	<br />
 
-	<?php _e('Sunday', 'open-hours')?>:
+	<?php _e('Sunday', 'OpenHours')?>:
 	<input name="open_hours_7" type="text" id="open_hours_7"
 	value="<?php echo get_option('open_hours_7');
     ?>" />
 </fieldset>
 <fieldset>
-	<legend><?php _e('Holidays', 'open-hours')?></legend>
-	<?php _e('Start', 'open-hours')?>:
+	<legend><?php _e('Holidays', 'OpenHours')?></legend>
+	<?php _e('Start', 'OpenHours')?>:
 	<input name="open_hours_vac_start" type="text" id="open_hours_vac_start"
 	value="<?php echo get_option('open_hours_vac_start');
     ?>" />
 	<br />
-	<?php _e('End', 'open-hours')?>:
+	<?php _e('End', 'OpenHours')?>:
 	<input name="open_hours_vac_end" type="text" id="open_hours_vac_end"
 	value="<?php echo get_option('open_hours_vac_end');
     ?>" />
 	<br />
-	<?php _e('Reason', 'open-hours')?>:
+	<?php _e('Reason', 'OpenHours')?>:
 	<input name="open_hours_vac_reason" type="text" id="open_hours_vac_reason"
 	value="<?php echo get_option('open_hours_vac_reason');
     ?>" />
