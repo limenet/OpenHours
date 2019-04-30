@@ -24,8 +24,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-register_activation_hook(__FILE__, 'installPlugin');
-register_deactivation_hook(__FILE__, 'removePlugin');
 add_shortcode('open_hours', 'echo_hours');
 function openhours_load_textdomain()
 {
@@ -128,23 +126,6 @@ function echo_hours()
     $output .= '</div>';
 
     return $output;
-}
-
-function installPlugin()
-{
-    add_option('open_hours_1', '', '', 'yes');
-    add_option('open_hours_2', '', '', 'yes');
-    add_option('open_hours_3', '', '', 'yes');
-    add_option('open_hours_4', '', '', 'yes');
-    add_option('open_hours_5', '', '', 'yes');
-    add_option('open_hours_6', 'Closed', '', 'yes');
-    add_option('open_hours_7', 'Closed', '', 'yes');
-    add_option('open_hours_range', 'Monday - Friday', '', 'yes');
-    add_option('open_hours_range_hours', '9am to 5pm', '', 'yes');
-    add_option('open_hours_vac_start', '', '', 'yes');
-    add_option('open_hours_vac_end', '', '', 'yes');
-    add_option('open_hours_multiple_time_delimiter', '&', '', 'yes');
-    add_option('open_hours_time_delimiter', '-', '', 'yes');
 }
 
 if (is_admin()) {
