@@ -7,28 +7,29 @@ Version: 1.3.1
 Author: Linus Metzler
 Plugin URI: https://github.com/limenet/OpenHours
 License: GPLv2 or later
-*/
+ */
 /*  Copyright 2012  Linus Metzler  (email : limenet.ch@gmail.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
 
 register_activation_hook(__FILE__, 'installPlugin');
 register_deactivation_hook(__FILE__, 'removePlugin');
 add_shortcode('open_hours', 'echo_hours');
-function openhours_load_textdomain() {
-    load_plugin_textdomain('OpenHours', false, __DIR__.'/languages');
+function openhours_load_textdomain()
+{
+    load_plugin_textdomain('OpenHours', false, __DIR__ . '/languages');
 }
 add_action('plugins_loaded', 'openhours_load_textdomain');
 function echo_hours()
@@ -39,13 +40,13 @@ function echo_hours()
     $days = [1 => __('Monday', 'OpenHours'), 2 => __('Tuesday', 'OpenHours'), 3 => __('Wednesday', 'OpenHours'), 4 => __('Thursday', 'OpenHours'), 5 => __('Friday', 'OpenHours'), 6 => __('Saturday', 'OpenHours'), 7 => __('Sunday', 'OpenHours')];
     $override_status = get_option('open_hours_override_status');
     foreach ($days as $index => $day) {
-        $data[$index] = get_option('open_hours_'.$index);
+        $data[$index] = get_option('open_hours_' . $index);
     }
     $today = date('N');
     if (!empty($data[$today])) {
-        $parts = explode(' '.get_option('open_hours_multiple_time_delimiter').' ', $data[$today]);
+        $parts = explode(' ' . get_option('open_hours_multiple_time_delimiter') . ' ', $data[$today]);
         foreach ($parts as $key => $part) {
-            $times = explode(' '.get_option('open_hours_time_delimiter').' ', $part);
+            $times = explode(' ' . get_option('open_hours_time_delimiter') . ' ', $part);
             $open = explode(':', $times[0]);
             $close = explode(':', $times[1]);
             if ((int) $open[0] < (int) date('G')) {
@@ -65,7 +66,7 @@ function echo_hours()
                 }
             }
             if ($openNow) {
-                $label = '<span class="label label-success">'.__('open', 'OpenHours').'</span>';
+                $label = '<span class="label label-success">' . __('open', 'OpenHours') . '</span>';
                 break;
             }
             unset($times);
@@ -77,9 +78,9 @@ function echo_hours()
     if (!isset($label)) {
         if ($override_status == '1') {
             $override = true;
-            $label = '<span class="label label-success">'.__('open', 'OpenHours').'</span>';
+            $label = '<span class="label label-success">' . __('open', 'OpenHours') . '</span>';
         } else {
-            $label = '<span class="label label-important">'.__('closed', 'OpenHours').'</span>';
+            $label = '<span class="label label-important">' . __('closed', 'OpenHours') . '</span>';
         }
     }
 
@@ -88,23 +89,23 @@ function echo_hours()
     $vac_start = get_option('open_hours_vac_start');
     $vac_end = get_option('open_hours_vac_end');
     $vac_reason = get_option('open_hours_vac_reason');
-    if(get_option('open_hours_show_status_in_shortcode') === 'yes'){
-        if (!empty($vac_start) and !empty($vac_end)) {
+    if (get_option('open_hours_show_status_in_shortcode') === 'yes') {
+        if (!empty($vac_start) && !empty($vac_end)) {
             $output .= '<hr>';
-            $output .= '<h6><span class="label label-warning">'.__('Holidays', 'OpenHours').'</span></h6>';
-            $output .= '<p>'.sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'OpenHours'), $vac_start, $vac_end, $vac_reason).'</p>';
-            $output .= '<p>'.sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'OpenHours'), $vac_end).'</p>';
+            $output .= '<h6><span class="label label-warning">' . __('Holidays', 'OpenHours') . '</span></h6>';
+            $output .= '<p>' . sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'OpenHours'), $vac_start, $vac_end, $vac_reason) . '</p>';
+            $output .= '<p>' . sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'OpenHours'), $vac_end) . '</p>';
         } else {
-            $output .= '<p>'.sprintf(__('At the moment we are %s', 'OpenHours'), $label).'';
+            $output .= '<p>' . sprintf(__('At the moment we are %s', 'OpenHours'), $label) . '';
             $output .= $override ? __(', though normally we\'re only open during these hours:', 'OpenHours') : '.';
-            $ouput  .= '</p>';
+            $ouput .= '</p>';
         }
     }
 
     foreach ($data as $index => $day) {
         if (strlen($day) > 0) {
             $output .= '<div class="row"><div class="span1">';
-            $output .= $days[$index].'';
+            $output .= $days[$index] . '';
             $output .= '</div>';
             $output .= '<div class="span3">';
             $output .= $day;
@@ -146,32 +147,14 @@ function installPlugin()
     add_option('open_hours_time_delimiter', '-', '', 'yes');
 }
 
-function removePlugin()
-{
-    delete_option('open_hours_1');
-    delete_option('open_hours_2');
-    delete_option('open_hours_3');
-    delete_option('open_hours_4');
-    delete_option('open_hours_5');
-    delete_option('open_hours_6');
-    delete_option('open_hours_7');
-    delete_option('open_hours_range');
-    delete_option('open_hours_range_hours');
-    delete_option('open_hours_vac_start');
-    delete_option('open_hours_vac_end');
-    delete_option('open_hours_multiple_time_delimiter');
-    delete_option('open_hours_time_delimiter');
-}
-
 if (is_admin()) {
 
 /* Call the html code */
-add_action('admin_menu', 'hello_world_admin_menu');
+    add_action('admin_menu', 'hello_world_admin_menu');
 
     function hello_world_admin_menu()
     {
-        add_options_page('Open Hours', 'Open Hours', 'administrator',
-'OpenHours', 'open_hours_html_page');
+        add_options_page('Open Hours', 'Open Hours', 'administrator', 'OpenHours', 'open_hours_html_page');
     }
 }
 function open_hours_html_page()
@@ -195,7 +178,7 @@ function open_hours_html_page()
 <?php
 $override_status = get_option('open_hours_override_status');
     if ($override_status == '0'):
-?>
+    ?>
 <form method="post" action="options.php">
 	<?php wp_nonce_field('update-options');
     ?>
@@ -311,7 +294,7 @@ $override_status = get_option('open_hours_override_status');
 
 
 <p>
-<input type="submit" value="<?php _e('Save Changes') ?>" />
+<input type="submit" value="<?php _e('Save Changes')?>" />
 </p>
 
 </form>
