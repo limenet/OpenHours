@@ -85,15 +85,17 @@ function echo_hours()
     $vac_start = get_option('open_hours_vac_start');
     $vac_end = get_option('open_hours_vac_end');
     $vac_reason = get_option('open_hours_vac_reason');
-    if (!empty($vac_start) and !empty($vac_end)) {
-        $output .= '<hr>';
-        $output .= '<h6><span class="label label-warning">'.__('Holidays', 'OpenHours').'</span></h6>';
-        $output .= '<p>'.sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'OpenHours'), $vac_start, $vac_end, $vac_reason).'</p>';
-        $output .= '<p>'.sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'OpenHours'), $vac_end).'</p>';
-    } else {
-        $output .= '<p>'.sprintf(__('At the moment we are %s', 'OpenHours'), $label).'';
-        $output .= $override ? __(', though normally we\'re only open during these hours:', 'OpenHours') : '.';
-        $ouput  .= '</p>';
+    if(get_option('open_hours_show_status_in_shortcode') === 'yes'){
+        if (!empty($vac_start) and !empty($vac_end)) {
+            $output .= '<hr>';
+            $output .= '<h6><span class="label label-warning">'.__('Holidays', 'OpenHours').'</span></h6>';
+            $output .= '<p>'.sprintf(__('We\'re on holidays from %1$s until %2$s because %3$s.', 'OpenHours'), $vac_start, $vac_end, $vac_reason).'</p>';
+            $output .= '<p>'.sprintf(__('After %1$s we\'re happy to welcome you during the following hours:', 'OpenHours'), $vac_end).'</p>';
+        } else {
+            $output .= '<p>'.sprintf(__('At the moment we are %s', 'OpenHours'), $label).'';
+            $output .= $override ? __(', though normally we\'re only open during these hours:', 'OpenHours') : '.';
+            $ouput  .= '</p>';
+        }
     }
 
     foreach ($data as $index => $day) {
@@ -225,6 +227,10 @@ $override_status = get_option('open_hours_override_status');
 	<input name="open_hours_time_delimiter" type="text" id="open_hours_time_delimiter"
 	value="<?php echo get_option('open_hours_time_delimiter');
     ?>" />
+	<?php _e('Show open/closed in shortcode', 'OpenHours')?>:
+	<input name="open_hours_show_status_in_shortcode" type="checkbox" id="open_hours_show_status_in_shortcode"
+	value="yes" <?php echo get_option('open_hours_show_status_in_shortcode') === 'yes' ? 'checked' : '';
+    ?> />
 </fieldset>
 <fieldset>
 	<legend><?php _e('Range', 'open-hours')?></legend>
@@ -297,7 +303,7 @@ $override_status = get_option('open_hours_override_status');
 </fieldset>
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="open_hours_7, open_hours_1, open_hours_2, open_hours_3, open_hours_4, open_hours_5, open_hours_6, open_hours_range, open_hours_range_hours, open_hours_vac_start, open_hours_vac_end, open_hours_multiple_time_delimiter, open_hours_time_delimiter, open_hours_vac_reason" />
+<input type="hidden" name="page_options" value="open_hours_7, open_hours_1, open_hours_2, open_hours_3, open_hours_4, open_hours_5, open_hours_6, open_hours_range, open_hours_range_hours, open_hours_vac_start, open_hours_vac_end, open_hours_multiple_time_delimiter, open_hours_time_delimiter, open_hours_vac_reason, open_hours_show_status_in_shortcode" />
 
 
 <p>
